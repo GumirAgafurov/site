@@ -1,0 +1,49 @@
+// ===== SELECT =====
+
+.select {
+    width: 100%;
+    border: 1px solid $color-light-gray;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    background: $color-white;
+    margin-bottom: 20px;
+
+    &__selected {
+        padding: 10px 12px;
+        user-select: none;
+    }
+
+    &__options {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        border: 1px solid $color-black;
+        border-top: none;
+        display: none;
+        background: $color-white;
+        z-index: 10;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    &__option {
+        padding: 10px 12px;
+        border-bottom: 1px solid $color-black;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background: #f0f0f0;
+        }
+    }
+
+    &--active &__options {
+        display: block;
+    }
+}

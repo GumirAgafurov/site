@@ -1,0 +1,42 @@
+// ===== ПЕРЕМЕННЫЕ =====
+
+// Цвета
+$color-black: #000000;
+$color-white: #ffffff;
+$color-purple: #9E00FF;
+$color-gray: #F2F2F2;
+$color-pink: #ff8fa3;
+$color-light-gray: #ccc;
+$color-dark-gray: #333;
+$color-medium-gray: #444;
+$color-light-text: #999;
+$color-placeholder: #aaa;
+
+// Шрифты
+$font-primary: 'Raleway', sans-serif;
+$font-secondary: 'Oswald', sans-serif;
+$font-title: 'Neue Machina', sans-serif;
+
+// Размеры
+$header-height: 64px;
+$border-radius: 0.5rem;
+$border-radius-lg: 30px;
+$border-radius-xl: 40px;
+$border-radius-full: 999px;
+
+// Отступы
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 40px;
+
+// Транзиции
+$transition-speed: 0.15s;
+$transition-slow: 0.3s;
+
+// Брейкпоинты
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;

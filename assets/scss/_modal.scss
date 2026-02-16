@@ -1,0 +1,161 @@
+// ===== MODAL =====
+
+.fancybox__content {
+    border-radius: $border-radius-lg !important;
+
+    .modal__content {
+        padding: $spacing-lg;
+        max-width: 500px;
+        background: $color-white;
+        border-radius: 10px;
+    }
+}
+
+.modal {
+    &__content {
+        position: relative;
+        padding: $spacing-lg;
+
+        &--success {
+            text-align: left;
+            padding: $spacing-xxl $spacing-lg;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: none;
+        font-size: 28px;
+        line-height: 1;
+        color: $color-light-text;
+        cursor: pointer;
+        z-index: 10;
+        @include flex-center;
+        padding: 0;
+        outline: 2px solid $color-black;
+        outline-offset: -2px;
+        border-radius: 20%;
+
+        &:hover {
+            color: $color-purple;
+            background: none;
+            outline: none;
+
+            &::before {
+                color: $color-gray;
+                background-color: $color-purple;
+            }
+        }
+
+        &::before {
+            content: "✕";
+            font-size: 30px;
+            color: $color-black;
+            border-radius: 20%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        padding-right: 40px;
+    }
+
+    &__text {
+        grid-column: span 2;
+    }
+
+    &__image {
+        width: 128px;
+        height: 128px;
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    &__input {
+        padding: 12px;
+        border: 1px solid $color-black;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+        width: 100%;
+
+        &--comment {
+            grid-column: span 2;
+            padding-right: 150px;
+        }
+    }
+
+    &__field {
+        grid-column: span 2;
+        width: 100%;
+    }
+
+    &__label {
+        display: block;
+        font-size: 14px;
+        color: $color-pink;
+        margin-bottom: 6px;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        width: 100%;
+
+        input {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid $color-pink;
+            padding: 8px 150px 8px 0;
+            font-size: 16px;
+            outline: none;
+            background: transparent;
+            box-sizing: border-box;
+        }
+    }
+
+    &__attach-btn {
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+        background: $color-black;
+        color: $color-white;
+        border: none;
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        &:hover {
+            background: $color-purple;
+        }
+    }
+
+    &__submit,
+    &__return-btn {
+        grid-column: span 2;
+        background-color: $color-black !important;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color $transition-slow;
+        color: $color-white;
+    }
+
+    &__return-btn {
+        margin-top: 20px;
+    }
+}

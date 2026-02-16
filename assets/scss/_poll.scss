@@ -1,0 +1,110 @@
+// ===== POLL (общий блок для опросов) =====
+
+.poll {
+    grid-column: span 2;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+
+    &--grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &--single {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        max-width: 100%;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-sm;
+        padding: 8px 20px;
+        background-color: $color-white;
+        border: 2px solid $color-black;
+        border-radius: $border-radius-xl;
+        cursor: pointer;
+        transition: all $transition-slow ease;
+        position: relative;
+        text-align: center;
+
+        &:hover {
+            background-color: $color-purple;
+            border: 2px solid $color-purple;
+        }
+    }
+
+    &__checkbox {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    &__circle {
+        width: 18px;
+        height: 18px;
+        border: 2px solid $color-black;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        margin-right: $spacing-sm;
+        vertical-align: middle;
+        transition: all $transition-slow ease;
+
+        &::after {
+            content: "✕";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: $color-black;
+            transition: all $transition-slow ease;
+        }
+    }
+
+    &__text {
+        font-family: $font-secondary;
+        font-size: 14px;
+        color: $color-black;
+        transition: all $transition-slow ease;
+    }
+
+    // Ховер эффекты
+    &__item:hover &__circle {
+        border-color: $color-white;
+
+        &::after {
+            color: $color-white;
+        }
+    }
+
+    &__item:hover &__text {
+        color: $color-white;
+    }
+
+    // Checked состояние
+    &__checkbox:checked ~ &__circle {
+        background-color: $color-white;
+        border-color: $color-white;
+    }
+
+    &__checkbox:checked ~ &__text {
+        color: $color-white;
+    }
+
+    &__item:has(&__checkbox:checked) {
+        background-color: $color-black;
+        border-color: $color-black;
+    }
+}

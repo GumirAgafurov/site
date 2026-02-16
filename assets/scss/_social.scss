@@ -1,0 +1,81 @@
+// ===== SOCIAL (общий блок для header и footer) =====
+
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-sm;
+
+    .page-header & {
+        position: absolute;
+        top: 0.5rem;
+        right: 2rem;
+    }
+
+    &__link-button {
+        color: $color-white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: $color-black;
+        border-radius: $border-radius;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $color-purple;
+            cursor: pointer;
+            transition: $transition-speed ease;
+        }
+    }
+
+    &__link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all $transition-slow ease;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+
+        &--telegram:hover {
+            color: #00aaff;
+        }
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+// Стили для футера
+.page-footer {
+    .social__link svg {
+        filter: grayscale(1);
+        opacity: 0.8;
+        transition: opacity $transition-slow ease;
+    }
+
+    .social__link:hover svg {
+        opacity: 1;
+    }
+
+    .social__link-button {
+        padding: 10px 16px;
+        border: 1px solid $color-white;
+        border-radius: 20px;
+        font-size: 14px;
+        color: $color-white;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: all $transition-slow ease;
+
+        &:hover {
+            background: $color-white;
+            color: $color-black;
+        }
+    }
+}

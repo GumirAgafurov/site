@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    
+    <!-- Preconnect и шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Библиотеки -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+    
+    <!-- Наши стили -->
+    <link rel="stylesheet" href="assets/scss/main.css">
+</head>
+<body>
+    
+    <!-- HEADER: Блок page-header -->
+    <header class="page-header">
+        <div class="page-header__container">
+            
+            <!-- Логотип -->
+            <div class="page-header__logo">
+                <a href="index.html" class="page-header__logo-link">Super Quiz</a>
+            </div>
+            
+            <!-- Навигация -->
+            <nav class="page-header__nav">
+                <ul class="page-header__nav-list">
+                    <li class="page-header__nav-item">
+                        <a href="index.html" class="page-header__nav-link">Главная</a>
+                    </li>
+                    
+                    <!-- Дропдаун (элемент навигации) -->
+                    <li class="page-header__nav-item page-header__nav-item--dropdown">
+                        <a class="page-header__nav-link page-header__nav-link--dropdown">Не главная</a>
+                        <div class="page-header__dropdown">
+                            <a href="" class="page-header__dropdown-link">Подпункт</a>
+                            <a href="" class="page-header__dropdown-link">Еще подпункт</a>
+                            <a href="" class="page-header__dropdown-link">Еще один подпункт</a>
+                        </div>
+                    </li>
+                    
+                    <li class="page-header__nav-item">
+                        <a href="" class="page-header__nav-link">Отзывы</a>
+                    </li>
+                    <li class="page-header__nav-item">
+                        <a href="" class="page-header__nav-link">Квиз</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- SOCIAL: отдельный блок, используется в header и footer -->
+            <div class="social">
+                <a class="social__link-button" data-fancybox="form-modal" data-src="#modal">Связаться с нами</a>
+                
+                <a href="" class="social__link social__link--telegram" target="_blank" rel="noopener" title="Наш Telegram канал">
+                    <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.1 240.1">
+                        <linearGradient id="TelegramGradient" gradientUnits="userSpaceOnUse" x1="-838.041" y1="660.581" x2="-838.041" y2="660.3427" gradientTransform="matrix(1000 0 0 -1000 838161 660581)">
+                            <stop offset="0" style="stop-color:#2AABEE"/>
+                            <stop offset="1" style="stop-color:#229ED9"/>
+                        </linearGradient>
+                        <circle fill-rule="evenodd" clip-rule="evenodd" fill="url(#TelegramGradient)" cx="120.1" cy="120.1" r="120.1"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M54.3,118.8c35-15.2,58.3-25.3,70-30.2 c33.3-13.9,40.3-16.3,44.8-16.4c1,0,3.2,0.2,4.7,1.4c1.2,1,1.5,2.3,1.7,3.3s0.4,3.1,0.2,4.7c-1.8,19-9.6,65.1-13.6,86.3 c-1.7,9-5,12-8.2,12.3c-7,0.6-12.3-4.6-19-9c-10.6-6.9-16.5-11.2-26.8-18c-11.9-7.8-4.2-12.1,2.6-19.1c1.8-1.8,32.5-29.8,33.1-32.3 c0.1-0.3,0.1-1.5-0.6-2.1c-0.7-0.6-1.7-0.4-2.5-0.2c-1.1,0.2-17.9,11.4-50.6,33.5c-4.8,3.3-9.1,4.9-13,4.8 c-4.3-0.1-12.5-2.4-18.7-4.4c-7.5-2.4-13.5-3.7-13-7.9C45.7,123.3,48.7,121.1,54.3,118.8z"/>
+                    </svg>
+                </a>
+                
+                <a href="" class="social__link social__link--vk" target="_blank" rel="noopener" title="VK">
+                    <svg class="social__icon" viewBox="0 0 48 48">
+                        <path fill="#1976d2" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5 V37z"/>
+                        <path fill="#FFFFFF" d="M35.937,18.041c0.046-0.151,0.068-0.291,0.062-0.416C35.984,17.263,35.735,17,35.149,17h-2.618 c-0.661,0-0.966,0.4-1.144,0.801c0,0-1.632,3.359-3.513,5.574c-0.61,0.641-0.92,0.625-1.25,0.625C26.447,24,26,23.786,26,23.199 v-5.185C26,17.32,25.827,17,25.268,17h-4.649C20.212,17,20,17.32,20,17.641c0,0.667,0.898,0.827,1,2.696v3.623 C21,24.84,20.847,25,20.517,25c-0.89,0-2.642-3-3.815-6.932C16.448,17.294,16.194,17,15.533,17h-2.643 C12.127,17,12,17.374,12,17.774c0,0.721,0.6,4.619,3.875,9.101C18.25,30.125,21.379,32,24.149,32c1.678,0,1.85-0.427,1.85-1.094 v-2.972C26,27.133,26.183,27,26.717,27c0.381,0,1.158,0.25,2.658,2c1.73,2.018,2.044,3,3.036,3h2.618 c0.608,0,0.957-0.255,0.971-0.75c0.003-0.126-0.015-0.267-0.056-0.424c-0.194-0.576-1.084-1.984-2.194-3.326 c-0.615-0.743-1.222-1.479-1.501-1.879C32.062,25.36,31.991,25.176,32,25c0.009-0.185,0.105-0.361,0.249-0.607 C32.223,24.393,35.607,19.642,35.937,18.041z"/>
+                    </svg>
+                </a>
+                
+                <a href="" class="social__link social__link--tiktok" target="_blank" rel="noopener" title="TikTok">
+                    <svg class="social__icon" viewBox="0 0 512 512" fill="#000000">
+                        <path d="M 386.160156 141.550781 C 383.457031 140.15625 380.832031 138.625 378.285156 136.964844 C 370.878906 132.070312 364.085938 126.300781 358.058594 119.785156 C 342.976562 102.523438 337.339844 85.015625 335.265625 72.757812 L 335.351562 72.757812 C 333.617188 62.582031 334.332031 56 334.441406 56 L 265.742188 56 L 265.742188 321.648438 C 265.742188 325.214844 265.742188 328.742188 265.589844 332.226562 C 265.589844 332.660156 265.550781 333.058594 265.523438 333.523438 C 265.523438 333.714844 265.523438 333.917969 265.484375 334.117188 C 265.484375 334.167969 265.484375 334.214844 265.484375 334.265625 C 264.011719 353.621094 253.011719 370.976562 236.132812 380.566406 C 227.472656 385.496094 217.675781 388.078125 207.707031 388.066406 C 175.699219 388.066406 149.757812 361.964844 149.757812 329.734375 C 149.757812 297.5 175.699219 271.398438 207.707031 271.398438 C 213.765625 271.394531 219.789062 272.347656 225.550781 274.226562 L 225.632812 204.273438 C 190.277344 199.707031 154.621094 210.136719 127.300781 233.042969 C 115.457031 243.328125 105.503906 255.605469 97.882812 269.316406 C 94.984375 274.316406 84.042969 294.410156 82.714844 327.015625 C 81.882812 345.523438 87.441406 364.699219 90.089844 372.625 L 90.089844 372.792969 C 91.757812 377.457031 98.214844 393.382812 108.742188 406.808594 C 117.230469 417.578125 127.253906 427.035156 138.5 434.882812 L 138.5 434.714844 L 138.667969 434.882812 C 171.925781 457.484375 208.800781 456 208.800781 456 C 215.183594 455.742188 236.566406 456 260.851562 444.492188 C 287.785156 431.734375 303.117188 412.726562 303.117188 412.726562 C 312.914062 401.367188 320.703125 388.425781 326.148438 374.449219 C 332.367188 358.109375 334.441406 338.507812 334.441406 330.675781 L 334.441406 189.742188 C 335.273438 190.242188 346.375 197.582031 346.375 197.582031 C 346.375 197.582031 362.367188 207.832031 387.316406 214.507812 C 405.214844 219.257812 429.332031 220.257812 429.332031 220.257812 L 429.332031 152.058594 C 420.882812 152.976562 403.726562 150.308594 386.160156 141.550781 Z M 386.160156 141.550781"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- MODAL: блок модального окна -->
+    <div class="modal" id="modal" style="display: none;">
+        <div class="modal__content">
+            <button class="modal__close" id="modalClose"></button>
+            <h3 class="modal__title">Заполните контактные данные</h3>
+            <p class="modal__text">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты</p>
+            
+            <form class="modal__form" id="quizForm">
+                <input class="modal__input" type="text" placeholder="Ваше имя" required>
+                <input class="modal__input" type="text" placeholder="Фамилия" required>
+                
+                <div class="modal__field">
+                    <label class="modal__label" for="comment">Ваш комментарий</label>
+                    <div class="modal__input-wrapper">
+                        <input class="modal__input modal__input--comment" type="text" id="comment" required />
+                        <button type="button" class="modal__attach-btn">Приложить файлы &#128206;</button>
+                    </div>
+                </div>
+                
+                <!-- POLL: блок опроса (используется в модалке и в квизе) -->
+                <div class="poll">
+                    <label class="poll__item">
+                        <input type="checkbox" class="poll__checkbox">
+                        <span class="poll__circle"></span>
+                        <span class="poll__text">Не знаю</span>
+                    </label>
+                    
+                    <label class="poll__item">
+                        <input type="checkbox" class="poll__checkbox">
+                        <span class="poll__circle"></span>
+                        <span class="poll__text">Вон то</span>
+                    </label>
+                    
+                    <label class="poll__item">
+                        <input type="checkbox" class="poll__checkbox">
+                        <span class="poll__circle"></span>
+                        <span class="poll__text">Не знаю</span>
+                    </label>
+                    
+                    <label class="poll__item">
+                        <input type="checkbox" class="poll__checkbox">
+                        <span class="poll__circle"></span>
+                        <span class="poll__text">Увидел это</span>
+                    </label>
+                    
+                    <label class="poll__item">
+                        <input type="checkbox" class="poll__checkbox">
+                        <span class="poll__circle"></span>
+                        <span class="poll__text">Вон то</span>
+                    </label>
+                    
+                    <label class="poll__item">
+                        <input type="checkbox" class="poll__checkbox">
+                        <span class="poll__circle"></span>
+                        <span class="poll__text">Увидел это</span>
+                    </label>
+                </div>
+                
+                <p class="modal__text">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты</p>
+                <button class="modal__submit" type="submit">Продолжить</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- MODAL SUCCESS -->
+    <div class="modal" id="modalSuccess" style="display: none;">
+        <div class="modal__content modal__content--success">
+            <button class="modal__close" id="modalSuccessClose"></button>
+            
+            <img src="assets/img/smile.jpg" alt="Подмигивающий смайлик" class="modal__image"><br>
+            <h3 class="modal__title">Ваши данные отправлены</h3>
+            <p class="modal__text">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты!</p>
+            
+            <button class="modal__return-btn" id="returnToSite">Вернуться на сайт</button>
+        </div>
+    </div>
+    
+    <!-- QUIZ ANCHOR: плавающий блок реакций -->
+    <div class="quiz-anchor">
+        <div class="quiz-anchor__reactions">
+            <div class="quiz-anchor__reaction">😊 <span>Восхитительно</span></div>
+            <div class="quiz-anchor__reaction">😎 <span>Лучше не бывает</span></div>
+            <div class="quiz-anchor__reaction">😍 <span>Где найти еще?</span></div>
+            <div class="quiz-anchor__reaction">😅 <span>В натуре четко!</span></div>
+            <div class="quiz-anchor__reaction">🤩 <span>Круто</span></div>
+        </div>
+    </div>
+    
+    <!-- HERO: блок hero -->
+    <section class="hero">
+        <h1 class="hero__title">ЭТО СУПЕР-КВИЗ</h1>
+        <p class="hero__subtitle">Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей, которые любят проходить тесты</p>
+        <a href="#super-quiz" class="hero__button">Пройти супер-квиз</a>
+    </section>
+    
+   <!-- QUIZ: блоки квиза -->
+<section id="super-quiz" class="quiz">
+    <!-- Первый шаг (активный по умолчанию) -->
+    <div class="quiz__step quiz__step--active" data-step="1">
+        <h2 class="quiz__title">Какие виды тестов вам нравятся?</h2>
+        <p class="quiz__description">Многие из нас хоть раз попадались на эту уловку — хочешь пройти всего один тест из интернета, и вдруг понимаешь, что пролетело полдня.</p>
+        
+        <div class="poll poll--grid">
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">На темперамент</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Кто я из вселенной Марвел</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Увидел это</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Мое тотемное животное</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">На IQ</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">На словарный запас</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">На логическое мышление</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="checkbox" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">На уровень интеллекта</span>
+            </label>
+        </div>
+        
+        <a href="#quiz-step-2" class="quiz__button quiz__button--next" data-next="1">Продолжить</a>
+    </div>
+    
+    <!-- Второй шаг (скрыт) -->
+    <div class="quiz__step" data-step="2">
+        <h2 class="quiz__title">Вы любите проходить тесты?</h2>
+        <p class="quiz__description">Нам важно узнать, насколько часто Вы проходите тесты.</p>
+        
+        <div class="poll poll--single">
+            <label class="poll__item">
+                <input type="radio" name="quiz2" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Нет, я никогда не прохожу тесты</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="radio" name="quiz2" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Да, я прохожу все тесты</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="radio" name="quiz2" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Заставляю себя проходить тесты</span>
+            </label>
+            
+            <label class="poll__item">
+                <input type="radio" name="quiz2" class="poll__checkbox">
+                <span class="poll__circle"></span>
+                <span class="poll__text">Не люблю проходить тесты, но иногда приходится</span>
+            </label>
+        </div>
+        
+        <div class="quiz__navigation">
+            <a href="#super-quiz" class="quiz__button quiz__button--back" data-back="2">Назад</a>
+            <a href="#quiz-step-3" class="quiz__button quiz__button--next" data-next="2">Продолжить</a>
+        </div>
+    </div>
+    
+    <!-- Третий шаг (скрыт) -->
+    <div class="quiz__step" data-step="3">
+        <h2 class="quiz__title">
+            <img src="assets/img/smile.jpg" alt="Подмигивающий смайлик" class="quiz__image"><br>
+            Спасибо за ответы! Заполните форму ниже
+        </h2>
+        
+        <p class="quiz__description">Ваше мнение важно для нас. Прикрепите фото с Вашей любимой картинкой и оставьте комментарий, насколько понравился Вам тест.</p>
+        
+        <div class="quiz__form">
+            <label class="quiz__form-label">
+                <textarea class="quiz__textarea" placeholder="Ваше мнение сюда"></textarea>
+            </label>
+        </div>
+        
+        <div class="poll">
+            <div class="select">
+                <div class="select__selected">Выберите вариант</div>
+                <ul class="select__options">
+                    <li class="select__option">Очень понравился</li>
+                    <li class="select__option">Не понравился</li>
+                    <li class="select__option">Пройду ещё раз</li>
+                    <li class="select__option">Посоветую пройти всем</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="quiz__navigation">
+            <a href="#quiz-step-2" class="quiz__button quiz__button--back" data-back="3">Назад</a>
+            <button type="submit" class="quiz__button quiz__button--submit">Завершить</button>
+        </div>
+    </div>
+</section>
+    
+    <!-- REVIEWS: блок отзывов (карусель) -->
+    <section class="reviews">
+        <div class="swiper reviews__swiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide reviews__slide">
+                    <div class="review-card review-card--bg-1">
+                        <div class="review-card__content">
+                            <img src="assets/img/card1.png" alt="Андрей Пархимович" class="review-card__image">
+                            <h3 class="review-card__title">Андрей Пархимович</h3>
+                            <p class="review-card__text">В целом, конечно, постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide reviews__slide">
+                    <div class="review-card review-card--bg-2">
+                        <div class="review-card__content">
+                            <img src="assets/img/card2.png" alt="Артур Усович" class="review-card__image">
+                            <h3 class="review-card__title">Артур Усович</h3>
+                            <p class="review-card__text">Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide reviews__slide">
+                    <div class="review-card review-card--bg-3">
+                        <div class="review-card__content">
+                            <img src="assets/img/card3.png" alt="Тимур Никитенко" class="review-card__image">
+                            <h3 class="review-card__title">Тимур Никитенко</h3>
+                            <p class="review-card__text">Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide reviews__slide">
+                    <div class="review-card review-card--bg-1">
+                        <div class="review-card__content">
+                            <img src="assets/img/card1.png" alt="Андрей Пархимович" class="review-card__image">
+                            <h3 class="review-card__title">Андрей Пархимович</h3>
+                            <p class="review-card__text">В целом, конечно, постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide reviews__slide">
+                    <div class="review-card review-card--bg-2">
+                        <div class="review-card__content">
+                            <img src="assets/img/card2.png" alt="Тимур Никитенко" class="review-card__image">
+                            <h3 class="review-card__title">Тимур Никитенко</h3>
+                            <p class="review-card__text">Господа, глубокий уровень погружения в значительной степени обусловливает важность глубокомысленных рассуждений.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide reviews__slide">
+                    <div class="review-card review-card--bg-3">
+                        <div class="review-card__content">
+                            <img src="assets/img/card3.png" alt="Артур Усович" class="review-card__image">
+                            <h3 class="review-card__title">Артур Усович</h3>
+                            <p class="review-card__text">Задача организации, в особенности же убеждённость некоторых оппонентов предопределяет высокую востребованность благоприятных перспектив.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="swiper-pagination reviews__pagination"></div>
+        </div>
+    </section>
+    
+    <!-- FOOTER: блок page-footer -->
+    <footer class="page-footer">
+        <div class="page-footer__left">
+            <div class="page-footer__contacts">
+                <div class="page-footer__contact">
+                    <span class="page-footer__contact-label">телефон</span>
+                    <span class="page-footer__contact-value">+375 12 345 67 89</span>
+                </div>
+                <div class="page-footer__contact">
+                    <span class="page-footer__contact-label">email</span>
+                    <span class="page-footer__contact-value">ourmail@gmail.com</span>
+                </div>
+            </div>
+            
+            <!-- SOCIAL (тот же блок, что и в header) -->
+            <div class="social">
+                <a href="#" class="social__link social__link--telegram" title="Наш Telegram">
+                    <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.1 240.1">
+                        <linearGradient id="TelegramGradient" gradientUnits="userSpaceOnUse" x1="-838.041" y1="660.581" x2="-838.041" y2="660.3427" gradientTransform="matrix(1000 0 0 -1000 838161 660581)">
+                            <stop offset="0" style="stop-color:#2AABEE"/>
+                            <stop offset="1" style="stop-color:#229ED9"/>
+                        </linearGradient>
+                        <circle fill-rule="evenodd" clip-rule="evenodd" fill="url(#TelegramGradient)" cx="120.1" cy="120.1" r="120.1"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M54.3,118.8c35-15.2,58.3-25.3,70-30.2 c33.3-13.9,40.3-16.3,44.8-16.4c1,0,3.2,0.2,4.7,1.4c1.2,1,1.5,2.3,1.7,3.3s0.4,3.1,0.2,4.7c-1.8,19-9.6,65.1-13.6,86.3 c-1.7,9-5,12-8.2,12.3c-7,0.6-12.3-4.6-19-9c-10.6-6.9-16.5-11.2-26.8-18c-11.9-7.8-4.2-12.1,2.6-19.1c1.8-1.8,32.5-29.8,33.1-32.3 c0.1-0.3,0.1-1.5-0.6-2.1c-0.7-0.6-1.7-0.4-2.5-0.2c-1.1,0.2-17.9,11.4-50.6,33.5c-4.8,3.3-9.1,4.9-13,4.8 c-4.3-0.1-12.5-2.4-18.7-4.4c-7.5-2.4-13.5-3.7-13-7.9C45.7,123.3,48.7,121.1,54.3,118.8z"/>
+                    </svg>
+                </a>
+                
+                <a href="#" class="social__link social__link--vk" title="VK">
+                    <svg class="social__icon" viewBox="0 0 48 48">
+                        <path fill="#1976d2" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5 V37z"/>
+                        <path fill="#FFFFFF" d="M35.937,18.041c0.046-0.151,0.068-0.291,0.062-0.416C35.984,17.263,35.735,17,35.149,17h-2.618 c-0.661,0-0.966,0.4-1.144,0.801c0,0-1.632,3.359-3.513,5.574c-0.61,0.641-0.92,0.625-1.25,0.625C26.447,24,26,23.786,26,23.199 v-5.185C26,17.32,25.827,17,25.268,17h-4.649C20.212,17,20,17.32,20,17.641c0,0.667,0.898,0.827,1,2.696v3.623 C21,24.84,20.847,25,20.517,25c-0.89,0-2.642-3-3.815-6.932C16.448,17.294,16.194,17,15.533,17h-2.643 C12.127,17,12,17.374,12,17.774c0,0.721,0.6,4.619,3.875,9.101C18.25,30.125,21.379,32,24.149,32c1.678,0,1.85-0.427,1.85-1.094 v-2.972C26,27.133,26.183,27,26.717,27c0.381,0,1.158,0.25,2.658,2c1.73,2.018,2.044,3,3.036,3h2.618 c0.608,0,0.957-0.255,0.971-0.75c0.003-0.126-0.015-0.267-0.056-0.424c-0.194-0.576-1.084-1.984-2.194-3.326 c-0.615-0.743-1.222-1.479-1.501-1.879C32.062,25.36,31.991,25.176,32,25c0.009-0.185,0.105-0.361,0.249-0.607 C32.223,24.393,35.607,19.642,35.937,18.041z"/>
+                    </svg>
+                </a>
+                
+                <a href="#" class="social__link social__link--tiktok" title="TikTok">
+                    <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                        <path fill="#212121" fill-rule="evenodd" d="M10.904,6h26.191C39.804,6,42,8.196,42,10.904v26.191 C42,39.804,39.804,42,37.096,42H10.904C8.196,42,6,39.804,6,37.096V10.904C6,8.196,8.196,6,10.904,6z" clip-rule="evenodd"></path>
+                        <path fill="#ec407a" fill-rule="evenodd" d="M29.208,20.607c1.576,1.126,3.507,1.788,5.592,1.788v-4.011 c-0.395,0-0.788-0.041-1.174-0.123v3.157c-2.085,0-4.015-0.663-5.592-1.788v8.184c0,4.094-3.321,7.413-7.417,7.413 c-1.528,0-2.949-0.462-4.129-1.254c1.347,1.376,3.225,2.23,5.303,2.23c4.096,0,7.417-3.319,7.417-7.413L29.208,20.607L29.208,20.607 z M30.657,16.561c-0.805-0.879-1.334-2.016-1.449-3.273v-0.516h-1.113C28.375,14.369,29.331,15.734,30.657,16.561L30.657,16.561z M19.079,30.832c-0.45-0.59-0.693-1.311-0.692-2.053c0-1.873,1.519-3.391,3.393-3.391c0.349,0,0.696,0.053,1.029,0.159v-4.1 c-0.389-0.053-0.781-0.076-1.174-0.068v3.191c-0.333-0.106-0.68-0.159-1.03-0.159c-1.874,0-3.393,1.518-3.393,3.391 C17.213,29.127,17.972,30.274,19.079,30.832z" clip-rule="evenodd"></path>
+                        <path fill="#fff" fill-rule="evenodd" d="M28.034,19.63c1.576,1.126,3.507,1.788,5.592,1.788v-3.157 c-1.164-0.248-2.194-0.856-2.969-1.701c-1.326-0.827-2.281-2.191-2.561-3.788h-2.923v16.018c-0.007,1.867-1.523,3.379-3.393,3.379 c-1.102,0-2.081-0.525-2.701-1.338c-1.107-0.558-1.866-1.705-1.866-3.029c0-1.873,1.519-3.391,3.393-3.391 c0.359,0,0.705,0.056,1.03,0.159V21.38c-4.024,0.083-7.26,3.369-7.26,7.411c0,2.018,0.806,3.847,2.114,5.183 c1.18,0.792,2.601,1.254,4.129,1.254c4.096,0,7.417-3.319,7.417-7.413L28.034,19.63L28.034,19.63z" clip-rule="evenodd"></path>
+                        <path fill="#81d4fa" fill-rule="evenodd" d="M33.626,18.262v-0.854c-1.05,0.002-2.078-0.292-2.969-0.848 C31.445,17.423,32.483,18.018,33.626,18.262z M28.095,12.772c-0.027-0.153-0.047-0.306-0.061-0.461v-0.516h-4.036v16.019 c-0.006,1.867-1.523,3.379-3.393,3.379c-0.549,0-1.067-0.13-1.526-0.362c0.62,0.813,1.599,1.338,2.701,1.338 c1.87,0,3.386-1.512,3.393-3.379V12.772H28.095z M21.635,21.38v-0.909c-0.337-0.046-0.677-0.069-1.018-0.069 c-4.097,0-7.417,3.319-7.417,7.413c0,2.567,1.305,4.829,3.288,6.159c-1.308-1.336-2.114-3.165-2.114-5.183 C14.374,24.749,17.611,21.463,21.635,21.38z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="page-footer__right">
+            <div class="page-footer__logo">
+                <a href="index.html" class="page-footer__logo-link">Super Quiz</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

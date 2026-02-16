@@ -1,0 +1,49 @@
+// ===== МИКСИНЫ =====
+
+// Flex центрирование
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Абсолютное центрирование
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Адаптивный текст
+@mixin responsive-text($desktop, $tablet, $mobile) {
+    font-size: $desktop;
+    
+    @media (max-width: $tablet) {
+        font-size: $tablet;
+    }
+    
+    @media (max-width: $mobile) {
+        font-size: $mobile;
+    }
+}
+
+// Hover эффект с фиолетовым
+@mixin hover-purple {
+    transition: all $transition-speed ease;
+    
+    &:hover {
+        background-color: $color-purple;
+        color: $color-white;
+    }
+}
+
+// Квадратная кнопка с иконкой
+@mixin square-button($size) {
+    width: $size;
+    height: $size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}

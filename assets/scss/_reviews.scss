@@ -1,0 +1,75 @@
+// ===== REVIEWS =====
+
+.reviews {
+    padding: 100px 20px;
+
+    &__swiper {
+        overflow: hidden;
+    }
+
+    &__slide {
+        height: auto;
+    }
+
+    &__pagination {
+        position: relative;
+        margin-top: 30px;
+    }
+}
+
+.review-card {
+    min-height: 350px;
+    border-radius: 24px;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: $spacing-md;
+
+    &--bg-1 {
+        background-image: url("../img/card1.png");
+    }
+
+    &--bg-2 {
+        background-image: url("../img/card2.png");
+    }
+
+    &--bg-3 {
+        background-image: url("../img/card3.png");
+    }
+
+    &__content {
+        background: $color-white;
+        border-radius: 24px;
+        padding: $spacing-md;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        margin-top: auto;
+    }
+
+    &__image {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: $spacing-md;
+    }
+
+    &__title {
+        font-size: 20px;
+        margin-bottom: $spacing-sm;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.4;
+        color: $color-medium-gray;
+    }
+}

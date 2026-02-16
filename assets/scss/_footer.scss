@@ -1,0 +1,61 @@
+// ===== PAGE FOOTER =====
+
+.page-footer {
+    background-color: $color-black;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    padding: $spacing-xxl 20px;
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-xxl;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-lg;
+    }
+
+    &__contacts {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-label {
+        font-family: $font-primary;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $color-light-gray;
+        margin-bottom: $spacing-xs;
+    }
+
+    &__contact-value {
+        font-family: $font-title;
+        font-weight: 800;
+        font-size: 46px;
+    }
+
+    &__right {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__logo {
+        text-align: right;
+
+        &-link {
+            font-size: 24px;
+            font-weight: bold;
+            color: $color-white;
+            text-decoration: none;
+            font-family: $font-title;
+        }
+    }
+}

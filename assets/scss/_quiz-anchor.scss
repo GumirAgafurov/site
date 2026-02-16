@@ -1,0 +1,35 @@
+// ===== QUIZ ANCHOR =====
+
+.quiz-anchor {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: opacity $transition-slow ease, transform $transition-slow ease;
+
+    &--hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(100%);
+    }
+
+    &__reactions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__reaction {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-sm;
+        background: $color-white;
+        padding: 8px 14px;
+        border-radius: $border-radius-full;
+        font-size: 14px;
+        color: $color-black;
+        white-space: nowrap;
+    }
+}

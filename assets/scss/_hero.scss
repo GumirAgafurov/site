@@ -1,0 +1,46 @@
+// ===== HERO =====
+
+.hero {
+    min-height: calc(100vh - $header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: $spacing-xxl 20px;
+    box-sizing: border-box;
+
+    &__title {
+        max-width: 900px;
+        margin: 0 auto $spacing-lg;
+        font-family: $font-title;
+        font-weight: 800;
+        font-size: 72px;
+    }
+
+    &__subtitle {
+        max-width: 720px;
+        margin: 0 auto $spacing-xl;
+        font-family: $font-primary;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.4;
+        color: $color-dark-gray;
+    }
+
+    &__button {
+        color: $color-white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        background-color: $color-black;
+        border-radius: $border-radius;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+            background-color: $color-purple;
+            cursor: pointer;
+            transition: $transition-speed ease;
+        }
+    }
+}

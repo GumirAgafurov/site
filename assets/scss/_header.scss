@@ -1,0 +1,124 @@
+// ===== PAGE HEADER =====
+
+.page-header {
+    width: 100%;
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid $color-gray;
+    background-color: $color-gray;
+    z-index: 1000;
+
+    &__container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+
+        &-link {
+            font-family: $font-title;
+            color: $color-black;
+            font-size: 20px;
+            line-height: 1.4;
+            letter-spacing: 5px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+    }
+
+    &__nav-list {
+        list-style: none;
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15rem;
+    }
+
+    &__nav-item {
+        position: relative;
+    }
+
+    &__nav-link {
+        font-family: $font-secondary;
+        color: $color-black;
+        font-size: 1rem;
+        text-decoration: none;
+        padding: 5px;
+        transition: color $transition-slow;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-purple;
+            border-radius: $border-radius;
+            transition: $transition-speed ease;
+        }
+
+        &--dropdown {
+            cursor: pointer;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        padding-top: $spacing-sm;
+
+        &-link {
+            display: block;
+            background-color: $color-black;
+            color: $color-white;
+            font-family: $font-secondary;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-bottom: $spacing-sm;
+            transition: background-color $transition-slow;
+            border-radius: $border-radius;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                background-color: $color-purple;
+            }
+        }
+    }
+
+    &__nav-item--dropdown:hover &__dropdown {
+        display: block;
+    }
+}
+
+// Отдельный класс для дропдаун кнопки (сохраняем оригинальное поведение)
+.dropbtn {
+    font-family: $font-secondary;
+    color: $color-black;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px;
+    transition: all $transition-slow;
+
+    .page-header__nav-item--dropdown:hover & {
+        color: $color-white;
+        background-color: $color-black;
+        border-radius: $border-radius;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-purple;
+        }
+    }
+}
